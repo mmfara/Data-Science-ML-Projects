@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Test App</title>
+</head>
+<body>
+
+
+<h1>Printing table of {{n}} Powers</h1>
+{% for i in range(1,6):%}
+	<h3>{{n}} power {{i}} = {{n**i}}</h3>
+
+{%endfor %}
+
+
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+<style>
+
+body{
+	background-image: url('https://images.pexels.com/photos/3696665/pexels-photo-3696665.jpeg?auto=compress&cs=tinysrgb&w=1600');
+	background-position: 200%;
+	background-size: cover;	
+}
+</style>
+
+</body>
+</html>
