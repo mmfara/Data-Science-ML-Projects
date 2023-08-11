@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Zomato Restaurant Rating Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('https://images.pexels.com/photos/9010117/pexels-photo-9010117.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover no-repeat;
+  }
+
+  .login {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .login h1 {
+    margin-bottom: 20px;
+  }
+
+  .login form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .login input {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .login button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+</head>
+
+<body>
+
+<img src=
+"https://upload.wikimedia.org/wikipedia/commons/7/75/Zomato_logo.png"
+         alt="zomato image", width="300", height="150", style="float:left">
+
+<!--
+<img src=
+https://totaldatascience.com/wp-content/uploads/2019/10/TOTAL-1.png"
+         alt="zomato image", width="200", height="70", style="float:right">
+-->
+<style>
+body {
+  background-image: url("https://images.pexels.com/photos/17628615/pexels-photo-17628615/free-photo-of-fish-served-in-a-restaurant.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-position: 200%;
+  background-size: cover;
+}
+
+</style>
+
+<div class="container">
+    <img class="background-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeFKHff-mboBy6fPipp28VvtUt229SRUYF47l9cyG6Zm79n0Hrvf29iPTHu81dybVKMIs&usqp=CAU" alt="Background Image">
+
+
+ <div class="login">
+	<h1>Predict Zomato Restaurant Ratings</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Online Order" placeholder="Order Online" required="required" />
+        <input type="text" name="Book Table" placeholder="Book Table" required="required" />
+		<input type="text" name="Votes" placeholder="Votes" required="required" />
+        <input type="text" name="Location" placeholder="Location" required="required" />
+        <input type="text" name="Restaurant Type" placeholder="Restaurant Type" required="required" />
+        <input type="text" name="Cuisines" placeholder="Cuisines" required="required" />
+        <input type="text" name="Cost" placeholder="Cost" required="required" />
+        <input type="text" name="Menu Item" placeholder="Menu Item" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
